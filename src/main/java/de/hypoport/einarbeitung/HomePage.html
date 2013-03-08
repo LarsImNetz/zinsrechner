@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org">
+	<head>
+		<meta charset="utf-8" />
+		<title>LLA Date Viewer</title>
+		<link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:regular,bold' rel='stylesheet' type='text/css' />
+		<link rel="stylesheet" href="style.css" type="text/css" media="screen" title="Stylesheet" />
+	</head>
+<body>
+<style>
+.tableborder  {
+	border-width: 1px;
+	border-style:solid;
+	border-radius:0 15px 0 15px;
+	border-color:black;
+	padding:10px;
+	margin-bottom:10px;
+}
+.cellborder {
+	border-width: 1px;
+	border-style:solid;
+	border-radius:10px 0 10px 0;
+	border-color:red;
+	padding: 5px;
+	background-color: #fee;
+}
+
+</style>
+
+
+<table class="tableborder">
+<tr>
+<td>Hier kommt ein Label:</td>
+<td  class="cellborder" wicket:id="label"></td>
+</tr>
+</table>
+
+<button wicket:id="doNothing">Klick hier für neues Datum</button>
+
+</body>
+</html>

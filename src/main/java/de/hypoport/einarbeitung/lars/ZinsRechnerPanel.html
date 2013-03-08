@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+
+</head>
+<body>
+
+<wicket:panel>
+<form wicket:id="form">
+    <div class="ui-corner-all">
+
+		<table >
+			<tr>
+				<th colspan="3"><label>Darlehensrechner</label></th>
+			</tr>
+			<tr>
+				<td><label>Miete:</label></td>
+				<td colspan="2"><input wicket:id="miete" type="text"/>€</td>
+			</tr>
+			<tr>
+				<td><label>Sparen:</label></td>
+				<td colspan="2"><input wicket:id="sparen" type="text"/>€</td>
+			</tr>
+				<tr>
+				<td><label>Zins:</label></td>
+				<td colspan="2"><input wicket:id="zins" type="text" />%</td>
+			</tr>
+			<tr>
+			<td colspan="3">&nbsp;</td>
+			</tr>
+				<tr>
+				<td><label>Tilgung:</label></td>
+				<td colspan="2"><input wicket:id="tilgung" type="text" />%</td>
+			</tr>
+			<tr>
+			<td colspan="3">oder</td>
+			</tr>
+			<tr>
+				<td><label>Laufzeit:</label></td>
+				<td colspan="2"><input wicket:id="laufzeit" type="text" />Monate</td>
+			</tr>
+			<tr>
+				<td colspan="3">
+				<div wicket:id="feedback"></div>
+				<button type="submit">berechnen</button></td>
+			</tr>
+
+			<tr>
+				<td><label>Resultat:</label></td>
+				<td colspan="2"><input wicket:id="resultat" type="text" />€</td>
+			</tr>
+
+		</table>
+	</div>
+</form>
+</wicket:panel>
+
+</body>
+</html>
