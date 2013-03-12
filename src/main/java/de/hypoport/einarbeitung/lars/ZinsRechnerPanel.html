@@ -14,18 +14,24 @@
 		<table >
 			<tr>
 				<th colspan="3"><label>Darlehensrechner</label></th>
+				<th></th>
 			</tr>
 			<tr>
 				<td><label>Miete:</label></td>
 				<td colspan="2"><input wicket:id="miete" type="text"/>€</td>
+				<td>
+					<span wicket:id="mieteFeedback"></span>
+				</td>
 			</tr>
 			<tr>
 				<td><label>Sparen:</label></td>
 				<td colspan="2"><input wicket:id="sparen" type="text"/>€</td>
+				<td></td>
 			</tr>
 				<tr>
 				<td><label>Zins:</label></td>
 				<td colspan="2"><input wicket:id="zins" type="text" />%</td>
+				<td><span wicket:id="zinsFeedback"></span></td>
 			</tr>
 			<tr>
 			<td colspan="3">&nbsp;</td>
@@ -33,23 +39,28 @@
 				<tr>
 				<td><label>Tilgung:</label></td>
 				<td colspan="2"><input wicket:id="tilgung" type="text" />%</td>
+				<td><span wicket:id="tilgungFeedback"></span></td>
 			</tr>
 			<tr>
 			<td colspan="3">oder</td>
+				<td></td>
 			</tr>
 			<tr>
 				<td><label>Laufzeit:</label></td>
 				<td colspan="2"><input wicket:id="laufzeit" type="text" />Monate</td>
+				<td></td>
 			</tr>
 			<tr>
 				<td colspan="3">
 				<div wicket:id="feedback"></div>
 				<button type="submit">berechnen</button></td>
+				<td></td>
 			</tr>
 
 			<tr>
 				<td><label>Resultat:</label></td>
 				<td colspan="2"><input wicket:id="resultat" type="text" />€</td>
+				<td></td>
 			</tr>
 
 		</table>
