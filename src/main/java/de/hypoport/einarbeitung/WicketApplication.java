@@ -1,7 +1,12 @@
 package de.hypoport.einarbeitung;
 
+import java.util.Locale;
+
+import org.apache.wicket.Session;
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.protocol.http.WebApplication;
+import org.apache.wicket.request.Request;
+import org.apache.wicket.request.Response;
 
 import de.hypoport.einarbeitung.lars.ZinsRechnerPage;
 
@@ -31,4 +36,16 @@ public class WicketApplication extends WebApplication {
 
 		// add your configuration here
 	}
+	
+	/**
+	 * Mal auf Deutsch einstellen
+	 */
+	@Override
+	public Session newSession(Request request, Response response) {
+		// TODO Auto-generated method stub
+		 Session newSession = super.newSession(request, response);
+		 newSession.setLocale(Locale.GERMANY);
+		 return newSession;
+	}
+
 }
