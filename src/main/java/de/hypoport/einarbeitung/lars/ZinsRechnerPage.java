@@ -13,6 +13,6 @@ public class ZinsRechnerPage extends WebPage {
 	public ZinsRechnerPage() {
 
 		bean = new Model<ZinsRechnerBean>(new ZinsRechnerBean());
-		add(new ZinsRechnerPanel("rechner", new CompoundPropertyModel<ZinsRechnerBean>(bean)));
+		add(new ZinsRechnerPanel("rechner", bean));
 	}
 }

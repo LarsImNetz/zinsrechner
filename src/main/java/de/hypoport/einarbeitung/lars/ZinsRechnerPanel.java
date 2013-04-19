@@ -7,6 +7,8 @@ import org.apache.wicket.markup.html.form.TextField;
 import org.apache.wicket.markup.html.panel.FeedbackPanel;
 import org.apache.wicket.markup.html.panel.Panel;
 import org.apache.wicket.model.CompoundPropertyModel;
+import org.apache.wicket.model.IModel;
+import org.apache.wicket.model.PropertyModel;
 import org.apache.wicket.validation.IErrorMessageSource;
 import org.apache.wicket.validation.IValidatable;
 import org.apache.wicket.validation.IValidationError;
@@ -14,10 +16,10 @@ import org.apache.wicket.validation.IValidator;
 
 public class ZinsRechnerPanel extends Panel {
 
-	public ZinsRechnerPanel(String id, final CompoundPropertyModel<ZinsRechnerBean> beanModel) {
+	public ZinsRechnerPanel(String id, final IModel<ZinsRechnerBean> beanModel) {
 		super(id, beanModel);
 
-		Form<Void> form = new Form<Void>("form") {
+		Form<ZinsRechnerBean> form = new Form<ZinsRechnerBean>("form") {
 
 			@Override
 			protected void onSubmit() {
@@ -32,7 +34,7 @@ public class ZinsRechnerPanel extends Panel {
 			}
 		};
 
-		TextField<Double> miete = new TextField<Double>("miete");
+		TextField<Double> miete = new TextField<Double>("miete", new PropertyModel<Double>(beanModel, "miete"), Double.class);
 		miete.setRequired(true);
 		miete.add(new IValidator<Double>() {
 
@@ -56,10 +58,10 @@ public class ZinsRechnerPanel extends Panel {
 		miete.add(new MarkIfValidationFailedBehavior(mieteFeedback));
 		form.add(miete);
 
-		TextField<Double> sparen = new TextField<Double>("sparen");
+		TextField<Double> sparen = new TextField<Double>("sparen", new PropertyModel<Double>(beanModel, "sparen"), Double.class);
 		form.add(sparen);
 
-		TextField<Double> zins = new TextField<Double>("zins");
+		TextField<Double> zins = new TextField<Double>("zins", new PropertyModel<Double>(beanModel, "zins"), Double.class);
 		zins.add(new IValidator<Double>() {
 
 			@Override
@@ -82,7 +84,7 @@ public class ZinsRechnerPanel extends Panel {
 		zins.add(new MarkIfValidationFailedBehavior(zinsFeedback));
 		form.add(zins);
 
-		TextField<Double> tilgung = new TextField<Double>("tilgung");
+		TextField<Double> tilgung = new TextField<Double>("tilgung", new PropertyModel<Double>(beanModel, "tilgung"), Double.class);
 		tilgung.add(new IValidator<Double>() {
 
 			@Override
@@ -105,7 +107,7 @@ public class ZinsRechnerPanel extends Panel {
 		tilgung.add(new MarkIfValidationFailedBehavior(tilgungFeedback));
 		form.add(tilgung);
 
-		TextField<Integer> laufzeit = new TextField<Integer>("laufzeit") {
+		TextField<Integer> laufzeit = new TextField<Integer>("laufzeit", new PropertyModel<Integer>(beanModel, "laufzeit"), Integer.class) {
 
 			// TODO: hier wäre ein kleiner Interpreter nett, der soetwas wie 12*j + 10 annehmen könnte.
 			public String getInput() {
@@ -125,7 +127,7 @@ public class ZinsRechnerPanel extends Panel {
 		};
 		form.add(laufzeit);
 
-		TextField<Double> result = new TextField<Double>("resultat");
+		TextField<Double> result = new TextField<Double>("resultat", new PropertyModel<Double>(beanModel, "resultat"), Double.class);
 		form.add(result);
 
 		form.add(new FeedbackPanel("feedback"));

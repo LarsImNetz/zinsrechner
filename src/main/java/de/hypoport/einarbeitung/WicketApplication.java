@@ -2,6 +2,7 @@ package de.hypoport.einarbeitung;
 
 import java.util.Locale;
 
+import org.apache.wicket.RuntimeConfigurationType;
 import org.apache.wicket.Session;
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.protocol.http.WebApplication;
@@ -48,4 +49,14 @@ public class WicketApplication extends WebApplication {
 		 return newSession;
 	}
 
+	@Override
+	public RuntimeConfigurationType getConfigurationType() {
+		return RuntimeConfigurationType.DEVELOPMENT; //  DEPLOYMENT;
+	}
+//	@Override
+//	public String getConfigurationType() {
+// 
+//		return Application.DEPLOYMENT;
+// 
+//	}
 }
