@@ -9,6 +9,7 @@ import org.apache.wicket.markup.html.panel.Panel;
 import org.apache.wicket.model.CompoundPropertyModel;
 import org.apache.wicket.model.IModel;
 import org.apache.wicket.model.PropertyModel;
+import org.apache.wicket.request.mapper.parameter.PageParameters;
 import org.apache.wicket.validation.IErrorMessageSource;
 import org.apache.wicket.validation.IValidatable;
 import org.apache.wicket.validation.IValidationError;
@@ -31,6 +32,15 @@ public class ZinsRechnerPanel extends Panel {
 				double result = Math.floor(bean.getEndkapital());
 				bean.setResultat(result);
 				info("Berechnung durchgeführt");
+				PageParameters parameter = new PageParameters().add("result", result);
+				setResponsePage(ZinsRechnerPage.class, parameter);
+//				super.onSubmit();
+//				try {
+//					Thread.sleep(5000);
+//				} catch (InterruptedException e) {
+//					// TODO Auto-generated catch block
+//					e.printStackTrace();
+//				}
 			}
 		};
 
@@ -56,6 +66,7 @@ public class ZinsRechnerPanel extends Panel {
 		ValidationIconPanel mieteFeedback = new ValidationIconPanel("mieteFeedback");
 		form.add(mieteFeedback);
 		miete.add(new MarkIfValidationFailedBehavior(mieteFeedback));
+		miete.setOutputMarkupId(true);
 		form.add(miete);
 
 		TextField<Double> sparen = new TextField<Double>("sparen", new PropertyModel<Double>(beanModel, "sparen"), Double.class);
@@ -105,6 +116,7 @@ public class ZinsRechnerPanel extends Panel {
 		ValidationIconPanel tilgungFeedback = new ValidationIconPanel("tilgungFeedback");
 		form.add(tilgungFeedback);
 		tilgung.add(new MarkIfValidationFailedBehavior(tilgungFeedback));
+		tilgung.setOutputMarkupId(true);
 		form.add(tilgung);
 
 		TextField<Integer> laufzeit = new TextField<Integer>("laufzeit", new PropertyModel<Integer>(beanModel, "laufzeit"), Integer.class) {
@@ -125,9 +137,11 @@ public class ZinsRechnerPanel extends Panel {
 			//				return i;
 			//			};
 		};
+		laufzeit.setOutputMarkupId(true);
 		form.add(laufzeit);
 
 		TextField<Double> result = new TextField<Double>("resultat", new PropertyModel<Double>(beanModel, "resultat"), Double.class);
+		result.setOutputMarkupId(true);
 		form.add(result);
 
 		form.add(new FeedbackPanel("feedback"));
