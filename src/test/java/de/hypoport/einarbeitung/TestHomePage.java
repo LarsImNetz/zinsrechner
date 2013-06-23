@@ -1,5 +1,6 @@
 package de.hypoport.einarbeitung;
 
+import org.apache.wicket.Page;
 import org.apache.wicket.util.tester.WicketTester;
 import org.junit.Before;
 import org.junit.Test;
@@ -26,5 +27,8 @@ public class TestHomePage {
 
 		//assert rendered page class
 		tester.assertRenderedPage(ZinsRechnerPage.class);
+		
+		Page lastRenderedPage = tester.getLastRenderedPage();
+		// tester.urlFor(lastRenderedPage);
 	}
 }
