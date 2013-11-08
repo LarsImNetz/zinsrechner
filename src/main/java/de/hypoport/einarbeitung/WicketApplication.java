@@ -2,6 +2,8 @@ package de.hypoport.einarbeitung;
 
 import java.util.Locale;
 
+import org.apache.wicket.ConverterLocator;
+import org.apache.wicket.IConverterLocator;
 import org.apache.wicket.RuntimeConfigurationType;
 import org.apache.wicket.Session;
 import org.apache.wicket.markup.html.WebPage;
@@ -9,6 +11,7 @@ import org.apache.wicket.protocol.http.WebApplication;
 import org.apache.wicket.request.Request;
 import org.apache.wicket.request.Response;
 
+import de.hypoport.einarbeitung.lars.DoubleConverter;
 import de.hypoport.einarbeitung.lars.ZinsRechnerPage;
 
 /**
@@ -54,10 +57,19 @@ public class WicketApplication extends WebApplication {
 		return RuntimeConfigurationType.DEVELOPMENT; //  DEPLOYMENT;
 	}
 
+	
 	//	@Override
 	//	public String getConfigurationType() {
 	//
 	//		return Application.DEPLOYMENT;
 	//
 	//	}
+
+	@Override
+	protected IConverterLocator newConverterLocator() {
+		// TODO Auto-generated method stub
+		ConverterLocator locator = (ConverterLocator)super.newConverterLocator();
+		locator.set(Double.class, new DoubleConverter());
+		return locator;
+	}
 }
