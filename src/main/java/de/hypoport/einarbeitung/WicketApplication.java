@@ -24,8 +24,8 @@ public class WicketApplication extends WebApplication {
 	 */
 	@Override
 	public Class<? extends WebPage> getHomePage() {
-		return HomePage.class;
-		// return ZinsRechnerPage.class;
+		// return HomePage.class;
+		return ZinsRechnerPage.class;
 	}
 
 	/**
@@ -37,26 +37,27 @@ public class WicketApplication extends WebApplication {
 
 		// add your configuration here
 	}
-	
+
 	/**
 	 * Mal auf Deutsch einstellen
 	 */
 	@Override
 	public Session newSession(Request request, Response response) {
 		// TODO Auto-generated method stub
-		 Session newSession = super.newSession(request, response);
-		 newSession.setLocale(Locale.GERMANY);
-		 return newSession;
+		Session newSession = super.newSession(request, response);
+		newSession.setLocale(Locale.GERMANY);
+		return newSession;
 	}
 
 	@Override
 	public RuntimeConfigurationType getConfigurationType() {
 		return RuntimeConfigurationType.DEVELOPMENT; //  DEPLOYMENT;
 	}
-//	@Override
-//	public String getConfigurationType() {
-// 
-//		return Application.DEPLOYMENT;
-// 
-//	}
+
+	//	@Override
+	//	public String getConfigurationType() {
+	//
+	//		return Application.DEPLOYMENT;
+	//
+	//	}
 }
