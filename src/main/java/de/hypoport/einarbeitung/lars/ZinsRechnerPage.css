@@ -1,0 +1,19 @@
+@CHARSET "utf-8";
+
+.rechner {
+	width:340px;
+	background-color: #ddd;
+	padding: 10px;
+}
+
+.comment {
+	padding: 10px;
+	font-size: 13px;
+	width:600px;
+	background-color: #ccc;
+	vertical-align: top;
+}
+
+.inputfield {
+	width:160px;
+}
