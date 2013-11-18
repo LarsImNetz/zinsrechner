@@ -93,7 +93,8 @@ public class TestZinsRechner {
 		// double tilgung2 = zinsrechner.calculateTilgung(23 * 12 + 4);
 		// Assert.assertEquals(expected, laufzeit);
 		double actual = zinsrechner.getTilgung();
-		Assert.assertTrue(actual > 2.988 && actual < 2.989);
-		int breakpoint = 0;
+		// Assert.assertTrue(actual > 2.988 && actual < 2.989);
+		Assert.assertEquals(2.988, actual, 0.001);
+		// int breakpoint = 0;
 	}
 }
