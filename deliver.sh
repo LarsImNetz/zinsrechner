@@ -9,6 +9,6 @@ SSH_OPT=
 
 DEBUGGING=
 
-$DEBUGGING ssh $SSH_OPT $USER@$FINDMOON  -p 21007 /etc/init.d/tomcat-7-testing stop
-$DEBUGGING scp ${WARFILE} $USER@${FINDMOON}:$PATHNAME
-$DEBUGGING ssh $SSH_OPT $USER@$FINDMOON  -p 21007 /etc/init.d/tomcat-7-testing start
+$DEBUGGING ssh $SSH_OPT $USER@$FINDMOON  -p 21007 "sudo /etc/init.d/tomcat-7-testing stop"
+$DEBUGGING scp  -P 21007 ${WARFILE} $USER@${FINDMOON}:$PATHNAME
+$DEBUGGING ssh $SSH_OPT $USER@$FINDMOON  -p 21007 "sudo /etc/init.d/tomcat-7-testing start"
