@@ -1,6 +1,6 @@
 package de.hypoport.einarbeitung.lars;
 
-import junit.framework.Assert;
+
 
 import org.apache.wicket.Component;
 import org.apache.wicket.markup.html.form.TextField;
@@ -8,6 +8,7 @@ import org.apache.wicket.model.CompoundPropertyModel;
 import org.apache.wicket.util.tester.FormTester;
 import org.apache.wicket.util.tester.WicketTester;
 import org.junit.After;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -54,7 +55,7 @@ public class TestZinsRechnerPanel {
 	public void testSetValue() {
 		formTester.setValue("miete", "450");
 		formTester.submit();
-		Assert.assertEquals(Double.valueOf(450.0), bean.getMiete());
+		Assert.assertEquals(Double.valueOf(450.0), bean.getMiete(), 0.001d);
 	}
 
 	@Test
@@ -67,7 +68,7 @@ public class TestZinsRechnerPanel {
 
 		formTester.submit();
 
-		Assert.assertEquals(Double.valueOf(132000), bean.getEndkapital());
+		Assert.assertEquals(Double.valueOf(132000), bean.getEndkapital(), 0.01d);
 	}
 	
 	@Test
@@ -80,7 +81,7 @@ public class TestZinsRechnerPanel {
 
 		formTester.submit();
 
-		Assert.assertEquals(Double.valueOf(120000), bean.getEndkapital());
+		Assert.assertEquals(Double.valueOf(120000), bean.getEndkapital(), 0.01d);
 	}
 
 	@Test
@@ -93,7 +94,7 @@ public class TestZinsRechnerPanel {
 
 		formTester.submit();
 
-		Assert.assertEquals(Double.valueOf(120000), bean.getEndkapital());
+		Assert.assertEquals(Double.valueOf(120000), bean.getEndkapital(), 0.01d);
 	}
 
 	@Test
@@ -106,8 +107,8 @@ public class TestZinsRechnerPanel {
 
 		formTester.submit();
 
-		Assert.assertEquals(Double.valueOf(132000), bean.getEndkapital());
-		Assert.assertEquals(Double.valueOf(2), bean.getTilgung());
+		Assert.assertEquals(Double.valueOf(132000), bean.getEndkapital(), 0.01d);
+		Assert.assertEquals(Double.valueOf(2), bean.getTilgung(), 0.01d);
 	}
 	
 	@Test

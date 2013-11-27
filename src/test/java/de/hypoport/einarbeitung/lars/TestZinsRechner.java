@@ -1,7 +1,8 @@
 package de.hypoport.einarbeitung.lars;
 
-import junit.framework.Assert;
 
+
+import org.junit.Assert;
 import org.junit.Test;
 
 public class TestZinsRechner {
@@ -27,7 +28,7 @@ public class TestZinsRechner {
 		ZinsRechner zinsrechner = new ZinsRechner(rate, zins, tilgung, laufzeit);
 		double actual = zinsrechner.getStartKapital();
 
-		Assert.assertEquals(expected, actual);
+		Assert.assertEquals(expected, actual,0.001d);
 	}
 
 	@Test
@@ -43,7 +44,7 @@ public class TestZinsRechner {
 
 		double zins_per_month = startkapital * (zins / 100) / 12;
 
-		Assert.assertEquals(zins_per_month, actual);
+		Assert.assertEquals(zins_per_month, actual,0.001d);
 	}
 
 	@Test

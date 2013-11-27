@@ -25,7 +25,6 @@ public class MarkIfValidationFailedBehavior extends AjaxFormComponentUpdatingBeh
 		this.iconChanger = changer;
 	}
 
-	@SuppressWarnings("unchecked")
 	@Override
 	protected void onUpdate(AjaxRequestTarget target) {
 		Component c = this.getComponent();

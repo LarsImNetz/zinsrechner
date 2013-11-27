@@ -46,7 +46,6 @@ public class WicketApplication extends WebApplication {
 	 */
 	@Override
 	public Session newSession(Request request, Response response) {
-		// TODO Auto-generated method stub
 		Session newSession = super.newSession(request, response);
 		newSession.setLocale(Locale.GERMANY);
 		return newSession;
@@ -67,7 +66,6 @@ public class WicketApplication extends WebApplication {
 
 	@Override
 	protected IConverterLocator newConverterLocator() {
-		// TODO Auto-generated method stub
 		ConverterLocator locator = (ConverterLocator)super.newConverterLocator();
 		locator.set(Double.class, new DoubleConverter());
 		return locator;
