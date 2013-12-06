@@ -3,6 +3,11 @@
 
 FINDMOON=$(L findmoon)
 WARFILE=$(L warfile)
+if [ -z "$WARFILE" ]; then
+    echo "Kein WAR File gefunden, nichts gebaut?"
+    exit 1
+fi
+
 USER=langha_l
 PATHNAME=/var/lib/tomcat-7-testing/webapps
 SSH_OPT=
