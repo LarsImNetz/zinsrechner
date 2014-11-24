@@ -28,7 +28,7 @@ public class TestHomePage {
 		//assert rendered page class
 		tester.assertRenderedPage(ZinsRechnerPage.class);
 		
-		Page lastRenderedPage = tester.getLastRenderedPage();
+		// Page lastRenderedPage = tester.getLastRenderedPage();
 		// tester.urlFor(lastRenderedPage);
 	}
 }
