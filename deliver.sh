@@ -15,5 +15,6 @@ SSH_OPT=
 DEBUGGING=
 
 $DEBUGGING ssh $SSH_OPT $USER@$FINDMOON  -p 21007 "sudo /etc/init.d/tomcat-7-testing stop"
+# TODO: geht das vielleicht mit rsync?
 $DEBUGGING scp  -P 21007 ${WARFILE} $USER@${FINDMOON}:$PATHNAME
 $DEBUGGING ssh $SSH_OPT $USER@$FINDMOON  -p 21007 "sudo /etc/init.d/tomcat-7-testing start"
